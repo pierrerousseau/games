@@ -1,10 +1,14 @@
+""" Tests for basic node package.
+"""
 import unittest
 
-from .node import List, Node, add_to_nodes, create_nodes, nodes_to_str, \
+from node import List, Node, add_to_nodes, create_nodes, nodes_to_str, \
     remove_from_nodes
 
 
 class TestNode(unittest.TestCase):
+    """ Class for testing.
+    """
 
     def setUp(self):
         pass
