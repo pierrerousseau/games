@@ -41,17 +41,17 @@ def get_loop(node):
     return path
 
 
-def answer(nodes):
+def answer(linked_list):
     """ :returns: a readable answer
 
-        :param List nodes: the linked nodes to reverse.
+        :param List linked_list: a linked list to test for loops
     """
-    slow_node = nodes.start
+    slow_node = linked_list.start
     loop      = has_loop(slow_node, slow_node)
 
     path = []
     if loop:
-        path = get_loop(nodes.start)
+        path = get_loop(linked_list.start)
 
     return "list has a loop ? {}, {}".format(loop, path)
 
