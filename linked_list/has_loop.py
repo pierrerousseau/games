@@ -5,7 +5,7 @@
 from node import List, Node
 
 
-def has_loop_aux(slow_node, fast_node):
+def has_loop(slow_node, fast_node):
     """ :returns: True if <slow_node> meets <fast_node>
 
         :param Node slow_node: a node moving to next node at each step
@@ -18,7 +18,7 @@ def has_loop_aux(slow_node, fast_node):
         if not loop:
             slow_node = slow_node.next
             fast_node = fast_node.next
-            loop = has_loop_aux(slow_node, fast_node)
+            loop = has_loop(slow_node, fast_node)
 
     return loop
 
@@ -41,13 +41,13 @@ def get_loop(node):
     return path
 
 
-def has_loop(nodes):
-    """ :returns: the reversed list of <nodes>
+def answer(nodes):
+    """ :returns: a readable answer
 
         :param List nodes: the linked nodes to reverse.
     """
     slow_node = nodes.start
-    loop      = has_loop_aux(slow_node, slow_node)
+    loop      = has_loop(slow_node, slow_node)
 
     path = []
     if loop:
@@ -73,28 +73,28 @@ def main():
     node5.next = node6
 
     list1 = List([])
-    print(has_loop(list1))
+    print(answer(list1))
 
     list1.start = node1
-    print(has_loop(list1))
+    print(answer(list1))
 
     node6.next = node3
-    print(has_loop(list1))
+    print(answer(list1))
 
     node6.next = node5
-    print(has_loop(list1))
+    print(answer(list1))
 
     node6.next = None
     node2.next = node1
-    print(has_loop(list1))
+    print(answer(list1))
 
     node2.next = node3
     node6.next = node1
-    print(has_loop(list1))
+    print(answer(list1))
 
     node6.next = None
     node4.next = node4
-    print(has_loop(list1))
+    print(answer(list1))
 
 
 if __name__ == '__main__':

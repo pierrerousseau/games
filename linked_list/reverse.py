@@ -7,7 +7,7 @@ from node import List
 
 
 def reverse_aux(nodes):
-    """ :returns: the reversed list of <nodes>
+    """ :returns: a couple : end, start of the reversed list
 
         :param Node nodes: the start of a list of linked nodes.
     """
@@ -26,14 +26,24 @@ def reverse_aux(nodes):
 def reverse(nodes):
     """ :returns: the reversed list of <nodes>
 
-        :param List nodes: the linked nodes to reverse.
+        :param Node nodes: the start of a list of linked nodes.
     """
-    message = "inverse of {} is ".format(nodes)
+    return reverse_aux(nodes)[1]
+
+
+def answer(nodes):
+    """ :returns: a readable answer
+
+        :param List nodes: the linked list to reverse.
+    """
+    message = "reverse of {} is ".format(nodes)
     reversed_list       = List([])
-    reversed_list.start = reverse_aux(nodes.start)[1]
+    reversed_list.start = reverse(nodes.start)
 
     return message + str(reversed_list)
 
 
 if __name__ == '__main__':
-    print(reverse(List([1, 2, 3, 4, 5, 6])))
+    print(answer(List([])))
+    print(answer(List([1])))
+    print(answer(List([1, 2, 3, 4, 5, 6])))

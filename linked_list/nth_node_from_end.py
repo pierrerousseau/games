@@ -33,13 +33,23 @@ def find_nth_from_end(nodes, index):
         :param Node nodes: the start of a list of linked nodes.
         :param int index: the nth element from the end
     """
-    nth = find_nth_from_end_aux(nodes.start, index)[1]
+    return find_nth_from_end_aux(nodes, index)[1]
+
+
+def answer(nodes, index):
+    """ :returns: a readable answer
+
+        :param Node nodes: the start of a list of linked nodes.
+        :param int index: the nth element from the end
+    """
+    nth = find_nth_from_end(nodes.start, index)
+
     return "{} from the end of {} is {}".format(index, nodes, nth)
 
 
 if __name__ == '__main__':
-    print(find_nth_from_end(List([1, 2, 3, 4, 5, 6]), 3))
-    print(find_nth_from_end(List([1, 2, 3, 4, 5, 6]), 1))
-    print(find_nth_from_end(List([1, 2, 3, 4, 5, 6]), 6))
-    print(find_nth_from_end(List([1, 2, 3, 4, 5, 6]), 0))
-    print(find_nth_from_end(List([1, 2, 3, 4, 5, 6]), 7))
+    print(answer(List([1, 2, 3, 4, 5, 6]), 3))
+    print(answer(List([1, 2, 3, 4, 5, 6]), 1))
+    print(answer(List([1, 2, 3, 4, 5, 6]), 6))
+    print(answer(List([1, 2, 3, 4, 5, 6]), 0))
+    print(answer(List([1, 2, 3, 4, 5, 6]), 7))
