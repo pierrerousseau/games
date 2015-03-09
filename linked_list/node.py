@@ -94,6 +94,18 @@ def remove_from_nodes(nodes, data, first=True):
     return nodes
 
 
+def len_nodes(nodes):
+    """ :returns: the length of the linked list
+
+        :param Node nodes: the start node of a linked list
+    """
+    length = 0
+    if nodes is not None:
+        length = 1 + len_nodes(nodes.next)
+
+    return length
+
+
 class List(object):
     """ Just to have a type for a linked list.
     """
@@ -108,6 +120,11 @@ class List(object):
         """ To convert into str.
         """
         return nodes_to_str(self.start)
+
+    def __len__(self):
+        """ for len()
+        """
+        return len_nodes(self.start)
 
     def add(self, node, begining=False):
         """ Add <node> to the list
