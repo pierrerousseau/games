@@ -17,7 +17,7 @@ def permutations(string):
     if len_string == 0:
         found = [""]
     elif len_string:
-        first           = string[0]
+        first = string[0]
         for word in permutations(string[1:]):
             for index in range(len(word) + 1):
                 found.append(word[:index] + first + word[index:])
