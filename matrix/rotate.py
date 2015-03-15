@@ -3,15 +3,8 @@
 
     from : Craking the Coding Interview, 4th edition, Gayle Laakmann
 """
+from matrix import to_str
 
-# Constants
-
-#: character to end a line
-END_LINE = "\n"
-#: size of an elem to print
-ELEM_SIZE = 3
-
-# // Constants
 
 def rotate(matrix, depth=0):
     """ :returns: the matrix after rotation by 90 degrees
@@ -34,31 +27,14 @@ def rotate(matrix, depth=0):
     return matrix
 
 
-def matrix_to_str(matrix, end_line=END_LINE, elem_size=ELEM_SIZE):
-    """ :returns: string version of <matrix>
-
-        :param list matrix: a matrix
-        :param str end_line: end row character
-        :param str elem_size: how many character to print an elemennt of the
-            matrix
-    """
-    string = ""
-    for row in matrix:
-        for elem in row:
-            string += str(elem).rjust(elem_size)
-        string += end_line
-
-    return string
-
-
 def answer(matrix):
     """ :returns: a readable answer
 
         :param list matrix: a matrix
     """
-    str_matrix  = matrix_to_str(matrix)
+    str_matrix = to_str(matrix)
     rotate(matrix)
-    str_rotated = matrix_to_str(matrix)
+    str_rotated = to_str(matrix)
 
     return "{} \n rotated is \n\n{}".format(str_matrix, str_rotated)
 
