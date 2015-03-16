@@ -7,7 +7,7 @@ class Node(object):
     """
     def __init__(self, data, next_node=None):
         """ Node constructor.
-            
+
             :param data: the data of the node
             :param Node next_node: the next node in the list
         """
@@ -39,7 +39,7 @@ def create_nodes(data=None):
 
         :returns: the first node of a linked list
 
-        :param list data: a python list containing the values of the elements 
+        :param list data: a python list containing the values of the elements
             to add to the created linked list
 
         raise TypeError if data is not a list
@@ -81,7 +81,7 @@ def remove_from_nodes(nodes, data, first=True):
 
         :param Node nodes: the start node of a linked list of nodes
         :param data: the value of the node to remove
-        :param bool first if true, the only the first node with this value is 
+        :param bool first if true, the only the first node with this value is
             removed, else all of them
     """
     if nodes:
@@ -111,7 +111,7 @@ class List(object):
     """
     def __init__(self, data=None):
         """ List constructor.
-            
+
             :param data: the initial data of the lists
         """
         self.start = create_nodes(data)
@@ -130,7 +130,7 @@ class List(object):
         """ Add <node> to the list
 
             :param Node node: the node to add
-            :param bool begining if true, the node is added at the begining of 
+            :param bool begining if true, the node is added at the begining of
                 the list, else at the end (default behavior)
         """
         self.start = add_to_nodes(self.start, node, begining)
@@ -139,7 +139,7 @@ class List(object):
         """ Add <node> to the list
 
             :param data: the value of the node to remove
-            :param bool first if true, the only the first node with this value is 
-                removed, else all of them
+            :param bool first if true, the only the first node with this value
+                is removed, else all of them
         """
         self.start = remove_from_nodes(self.start, data, first)
