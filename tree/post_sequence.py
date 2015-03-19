@@ -3,7 +3,8 @@
 
     from : http://codercareer.blogspot.fr/2011/09/no-06-post-order-traversal-sequences-of.html
 """
-from bst import create_nodes, nodes_to_str
+from binary_tree import nodes_to_str
+from bst import create_nodes
 
 
 def is_post_sequence(sequence):

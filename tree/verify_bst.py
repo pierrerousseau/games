@@ -2,7 +2,8 @@
     
     from : http://codercareer.blogspot.fr/2012/01/no-31-binary-search-tree-verification.html
 """
-from bst import Node, create_nodes, in_traversal, nodes_to_str
+from binary_tree import Node, in_traversal, nodes_to_str
+from bst import create_nodes
 
 
 def verify(tree, minimum=0):
